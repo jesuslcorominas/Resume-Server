@@ -16,7 +16,7 @@ class Experience_model extends CI_Model
         $result = $get->result();
         $experience_list = array();
         foreach($result as $row) {
-          $experience = new Experience($row->id,$row->company_name,$row->image,$row->start,$row->end,$row->description,$row->updated);
+          $experience = new Experience($row->id,$row->company_name,$row->image,$row->start,$row->end,$row->position,$row->description,$row->updated);
           array_push($experience_list,$experience);
         }
         return $experience_list;
@@ -32,7 +32,7 @@ class Experience_model extends CI_Model
       $get = $this->db->get();
       if($get->num_rows() > 0) {
         $row = $get->row();
-        $experience = new Experience($row->id,$row->company_name,$row->image,$row->start,$row->end,$row->description,$row->updated);
+        $experience = new Experience($row->id,$row->company_name,$row->image,$row->start,$row->end,$row->position,$row->description,$row->updated);
         return $experience;
       }
       return FALSE;
