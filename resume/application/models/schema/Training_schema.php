@@ -1,20 +1,24 @@
 <?php
 
-class Academic_training_schema
+class Training_schema
 {
-    const TABLE = 'academic_training';
+    const TABLE = 'training';
     
     const ID = 'id';
 
     const NAME = 'name';
+	
+	const SCHOOL = 'school';
 
     const MARK = 'mark';
-
-    const IMAGE = 'image';
 
     const START = 'start';
 
     const END = 'end';
+	
+	const HOURS = 'hours';
+	
+	const OFFICIAL = 'official';
 
     const UPDATED = 'updated';
 }

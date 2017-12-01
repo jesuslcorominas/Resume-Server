@@ -11,33 +11,31 @@ class Service extends REST_Controller
     {
         parent::__construct();
         $this->r = null;
-        $this->load->model('Academic_training_model','academic_training_model',TRUE);
+        $this->load->model('Training_model','training_model',TRUE);
         $this->load->model('Experience_model','experience_model',TRUE);
-        $this->load->model('Knowledge_model','knowledge_model',TRUE);
-        $this->load->model('Language_model','language_model',TRUE);
+        $this->load->model('Knowledge_model','knowledge_model',TRUE);        
         $this->load->model('Library_model','library_model',TRUE);
-        $this->load->model('Other_data_model','other_data_model',TRUE);
-        $this->load->model('Other_training_model','other_training_model',TRUE);
+        $this->load->model('Other_data_model','other_data_model',TRUE);        
         $this->load->model('Personal_data_model','personal_data_model',TRUE);
         $this->load->model('Project_image_model','project_image_model',TRUE);
         $this->load->model('Project_library_model','project_library_model',TRUE);
         $this->load->model('Project_model','project_model',TRUE);
     }
 
-    public function get_academic_training_get()
+    public function get_training_get()
     {
       $id = $this->uri->segment(3) ? $this->uri->segment(3) : 0;
-      if($this->academic_training_model->exist($id)) {
-        $academic_training = $this->academic_training_model->by_id($id);
-        $this->r = new R(0,'',$academic_training->jsonSerialize());
+      if($this->training_model->exist($id)) {
+        $training = $this->training_model->by_id($id);
+        $this->r = new R(0,'',$training->jsonSerialize());
         $this->response($this->r->get());
       }
     }
 
-    public function academic_training_get()
+    public function training_get()
     {
-      $academic_training_list = $this->academic_training_model->all();
-      $this->r = new R(0,'',$academic_training_list);
+      $training_list = $this->training_model->all();
+      $this->r = new R(0,'',$training_list);
       $this->response($this->r->get());
     }
 
@@ -76,23 +74,6 @@ class Service extends REST_Controller
       $this->response($this->r->get());
     }
 
-    // language
-    public function get_language_get()
-    {
-      $id = $this->uri->segment(3) ? $this->uri->segment(3) : 0;
-      if($this->language_model->exist($id)) {
-        $language = $this->language_model->by_id($id);
-        $this->r = new R(0,'',$language->jsonSerialize());
-        $this->response($this->r->get());
-      }
-    }
-
-    public function language_get()
-    {
-      $language_list = $this->language_model->all();
-      $this->r = new R(0,'',$language_list);
-      $this->response($this->r->get());
-    }
     // other_data
     public function get_other_data_get()
     {

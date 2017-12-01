@@ -43,7 +43,7 @@ class Project_model extends CI_Model
         $experience = null;
         if($g->num_rows() > 0) {
           $r = $g->row();
-          $experience = new Experience($r->id,$r->company_name,$r->image,$r->start,$r->end,$r->description,$r->updated);
+          $experience = new Experience($r->id,$r->company_name,$r->image,$r->start,$r->end,$r->position,$r->description,$r->updated);
         }
         $project = new ProjectItem($row->id,$row->name,$row->description,$row->platform,$row->icon,$row->path,$experience,$row->updated);
         $libraries = $this->library_model->by_project_id($row->id);
