@@ -1,6 +1,6 @@
 <?php
 
-class Project_image_schema
+class ImageItem_schema
 {
     const TABLE = 'project_image';
 	

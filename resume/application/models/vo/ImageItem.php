@@ -1,5 +1,5 @@
 <?php
-final class Project_image implements JsonSerializable {
+final class ImageItem implements JsonSerializable {
 
   private $id;
   private $path;
