@@ -7,19 +7,17 @@ final class Projectitem implements JsonSerializable {
   private $platform;
   private $icon;
   private $path;
-  private $experience;
   private $updated;
   private $images;
   private $libraries;
 
-  public function __construct($id,$name,$description,$platform,$icon,$path,$experience,$updated,$images,$libraries) {
+  public function __construct($id,$name,$description,$platform,$icon,$path,$updated,$images,$libraries) {
     $this->id = $id;
     $this->name = $name;
     $this->description = $description;
     $this->platform = $platform;
     $this->icon = $icon;
     $this->path = $path;
-    $this->experience = $experience;
     $this->updated = $updated;
 	$this->images = $images;
 	$this->libraries = $libraries;

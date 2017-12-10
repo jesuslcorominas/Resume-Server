@@ -74,7 +74,7 @@ class Experience_model extends CI_Model
 						}						
 					}
 					
-					$project = new ProjectItem($project_row->id,$project_row->name,$project_row->description,$project_row->platform,$project_row->icon,$project_row->path,$project_row->experience_id,$project_row->updated,$images_list, $libraries);
+					$project = new ProjectItem($project_row->id,$project_row->name,$project_row->description,$project_row->platform,$project_row->icon,$project_row->path,$project_row->updated,$images_list, $libraries);
 					array_push($projects_list, $project);
 				}
 			}
