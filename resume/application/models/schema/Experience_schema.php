@@ -6,7 +6,7 @@ class Experience_schema
 
     const ID = 'id';
 
-    const COMPANY = 'company_name';
+    const NAME = 'name';
 
     const IMAGE = 'image';
 

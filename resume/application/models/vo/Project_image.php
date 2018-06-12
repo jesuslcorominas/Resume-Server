@@ -2,13 +2,13 @@
 final class Project_image implements JsonSerializable {
 
   private $id;
-  private $path;
+  private $name;
   private $project_id;
   private $updated;
 
-  public function __construct($id,$path,$project_id,$updated) {
+  public function __construct($id,$name,$project_id,$updated) {
     $this->id = $id;
-    $this->path = $path;
+    $this->name = $name;
     $this->project_id = $project_id;
     $this->updated = $updated;
   }

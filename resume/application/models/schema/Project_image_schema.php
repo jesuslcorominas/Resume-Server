@@ -6,7 +6,7 @@ class Project_image_schema
 	
     const ID = 'id';
 	
-    const PATH = 'path';
+    const NAME = 'name';
 	
     const PROJECT_ID = 'project_id';
 	

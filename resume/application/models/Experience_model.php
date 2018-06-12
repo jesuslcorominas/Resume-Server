@@ -45,7 +45,7 @@ class Experience_model extends CI_Model
 					if ($images_get->num_rows() > 0) {
 						$images_result = $images_get->result();
 						foreach($images_result as $image_row) {							
-							$image = new ImageItem($image_row->id,$image_row->path,$image_row->project_id,$image_row->updated);
+							$image = new ImageItem($image_row->id,$image_row->name,$image_row->project_id,$image_row->updated);
 							array_push($images_list, $image);
 						}
 					}
@@ -79,7 +79,7 @@ class Experience_model extends CI_Model
 				}
 			}
 			
-          $experience = new ExperienceItem($row->id,$row->company_name,$row->image,$row->start,$row->end,$row->position,$row->description,$row->updated,$projects_list);
+          $experience = new ExperienceItem($row->id,$row->name,$row->image,$row->start,$row->end,$row->position,$row->description,$row->updated,$projects_list);
           array_push($experience_list,$experience);
         }
         return $experience_list;
@@ -95,7 +95,7 @@ class Experience_model extends CI_Model
       $get = $this->db->get();
       if($get->num_rows() > 0) {
         $row = $get->row();
-        $experience = new Experience($row->id,$row->company_name,$row->image,$row->start,$row->end,$row->position,$row->description,$row->updated);
+        $experience = new Experience($row->id,$row->name,$row->image,$row->start,$row->end,$row->position,$row->description,$row->updated);
         return $experience;
       }
       return FALSE;

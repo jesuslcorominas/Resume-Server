@@ -18,7 +18,7 @@ class Project_image_model extends CI_Model
         $project_image_list = array();
         foreach($result as $row) {
           $project = $this->project_model->by_id($row->project_id);
-          $project_image = new Project_image($row->id,$row->path,$project,$row->updated);
+          $project_image = new Project_image($row->id,$row->name,$project,$row->updated);
           array_push($project_image_list,$project_image);
         }
         return $project_image_list;
@@ -35,7 +35,7 @@ class Project_image_model extends CI_Model
       if($get->num_rows() > 0) {
         $row = $get->row();
         $project = $this->project_model->by_id($row->project_id);
-        $project_image = new Project_image($row->id,$row->path,$project,$row->updated);
+        $project_image = new Project_image($row->id,$row->name,$project,$row->updated);
         return $project_image;
       }
       return FALSE;

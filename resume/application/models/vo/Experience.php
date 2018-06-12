@@ -2,7 +2,7 @@
 final class Experience implements JsonSerializable {
 
   private $id;
-  private $company_name;
+  private $name;
   private $image;
   private $start;
   private $end;
@@ -10,9 +10,9 @@ final class Experience implements JsonSerializable {
   private $description;
   private $updated;  
 
-  public function __construct($id,$company_name,$image,$start,$end,$position,$description,$updated) {
+  public function __construct($id,$name,$image,$start,$end,$position,$description,$updated) {
     $this->id = $id;
-    $this->company_name = $company_name;
+    $this->name = $name;
     $this->image = $image;
     $this->start = $start;
     $this->end = $end;
